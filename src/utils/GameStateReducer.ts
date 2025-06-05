@@ -24,6 +24,8 @@ export const gameReducer = (state: any, action: any) => {
       return { ...state, moveCount: state.moveCount + 1 };
     case "GAME_OVER":
       return { ...state, gameOver: gameEnd(state.board, state.moveCount) };
+    case "RESET":
+      return initialState;
     default:
       return state;
   }

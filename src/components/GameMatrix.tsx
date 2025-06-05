@@ -13,6 +13,7 @@ const GameMatrix = () => {
     }
   };
 
+  // TODO: Add color coding to table cells and winner color
   return (
     <>
       <table className="gamematrix" border={2} align="center">

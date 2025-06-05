@@ -1,8 +1,9 @@
-import "./App.css";
+import "./styles.css";
 import GameMatrix from "./components/GameMatrix";
 import Header from "./components/Header";
 import Logger from "./components/Logger";
-import { GameStateProvider } from "./utils/GameStateProvider";
+import { GameStateProvider } from "./components/GameStateProvider";
+import ResetGame from "./components/ResetGame";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <GameStateProvider>
         <GameMatrix />
         <Logger />
+        <ResetGame />
       </GameStateProvider>
     </>
   );
