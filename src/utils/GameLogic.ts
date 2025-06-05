@@ -1,54 +1,53 @@
-const horizontalWin = (value: any[]): boolean => {
-  if (value[0] === value[1] && value[1] === value[2] && value[0] !== "")
+const horizontalWin = (board: string[]): boolean => {
+  if (board[0] === board[1] && board[1] === board[2] && board[0] !== "")
     return true;
-  if (value[3] === value[4] && value[4] === value[5] && value[3] !== "")
+  if (board[3] === board[4] && board[4] === board[5] && board[3] !== "")
     return true;
-  if (value[6] === value[7] && value[7] === value[8] && value[6] !== "")
-    return true;
-  return false;
-};
-
-const verticalWin = (value: any[]): boolean => {
-  if (value[0] === value[3] && value[3] === value[6] && value[0] !== "")
-    return true;
-  if (value[1] === value[4] && value[4] === value[7] && value[1] !== "")
-    return true;
-  if (value[2] === value[5] && value[5] === value[8] && value[2] !== "")
+  if (board[6] === board[7] && board[7] === board[8] && board[6] !== "")
     return true;
   return false;
 };
 
-const diagonalWin = (value: any[]): boolean => {
-  if (value[0] === value[4] && value[4] === value[8] && value[0] !== "")
+const verticalWin = (board: string[]): boolean => {
+  if (board[0] === board[3] && board[3] === board[6] && board[0] !== "")
     return true;
-  if (value[2] === value[4] && value[4] === value[6] && value[2] !== "")
+  if (board[1] === board[4] && board[4] === board[7] && board[1] !== "")
+    return true;
+  if (board[2] === board[5] && board[5] === board[8] && board[2] !== "")
     return true;
   return false;
 };
 
-const gameEndLogic = (value: any[]): boolean => {
-  if (horizontalWin(value)) {
-    console.log("horizontal wins");
+const diagonalWin = (board: string[]): boolean => {
+  if (board[0] === board[4] && board[4] === board[8] && board[0] !== "")
+    return true;
+  if (board[2] === board[4] && board[4] === board[6] && board[2] !== "")
+    return true;
+  return false;
+};
+
+const gameEndLogic = (board: string[]): boolean => {
+  if (horizontalWin(board)) {
     return true;
   }
-  if (verticalWin(value)) {
-    console.log("vertical wins");
+  if (verticalWin(board)) {
     return true;
   }
-  if (diagonalWin(value)) {
-    console.log("diagonal wins");
+  if (diagonalWin(board)) {
     return true;
   }
   return false;
 };
 
-export const gameEnd = (value: any[], moves: number): boolean => {
+export const gameEnd = (board: string[], moves: number): boolean => {
   if (moves >= 9) {
-    console.log("Game end: draw");
     return true;
-  } else if (gameEndLogic(value)) {
-    console.log("Player wins and game end");
+  } else if (gameEndLogic(board)) {
     return true;
   }
   return false;
+};
+
+export const gameEndInDraw = (board: string[], moves: number): boolean => {
+  return !gameEndLogic(board) && moves >= 9;
 };

@@ -5,6 +5,13 @@
   text-align: center;
 }
 
+.appContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .gamematrix {
   margin-top: 20px;
   height: 300px;
@@ -16,7 +23,10 @@
 }
 
 .gameloggerContainer {
-  margin-top: 50px;
+  margin: 16px;
+  width: 300px;
+  background-color: beige;
+  border-radius: 8px;
 }
 
 .gamelogger {
@@ -26,12 +36,36 @@
   align-items: center;
   justify-content: space-between;
   list-style-type: none;
-  padding: 0;
-  margin: 20px;
+  padding: 10px;
+}
+
+.playerInfoContainer {
+  background-color: beige;
+  border-radius: 8px;
+  width: 300px;
+}
+
+.playerInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 10px;
 }
 
 .resetGame {
-  border: 2px solid rgb(111, 111, 111);
+  border: 1px solid rgb(75, 75, 75);
   margin: 0px;
+  color: rgb(75, 75, 75);
   padding: 10px;
+}
+
+.blueCell {
+  background-color: rgb(21, 84, 172);
+  color: rgb(226, 235, 243);
+}
+
+.redCell {
+  background-color: rgb(198, 14, 14);
+  color: rgb(237, 186, 183);
 }

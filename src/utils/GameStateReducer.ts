@@ -2,6 +2,7 @@ import { gameEnd } from "./GameLogic";
 
 export const initialState = {
   board: Array(9).fill(""),
+  colorboard: Array(9).fill(""),
   player: false,
   moveCount: 0,
   gameOver: false,
@@ -16,6 +17,13 @@ export const gameReducer = (state: any, action: any) => {
           const updatedArray = [...state.board];
           updatedArray[action.payload?.idx] = state.player ? "O" : "X";
           return updatedArray;
+        })(),
+        colorboard: (() => {
+          const updatedColorBoard = [...state.colorboard];
+          updatedColorBoard[action.payload?.idx] = state.player
+            ? "blueCell"
+            : "redCell";
+          return updatedColorBoard;
         })(),
       };
     case "CHANGE_PLAYER":

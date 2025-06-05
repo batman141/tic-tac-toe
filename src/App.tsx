@@ -7,14 +7,14 @@ import ResetGame from "./components/ResetGame";
 
 function App() {
   return (
-    <>
+    <div className="appContainer">
       <Header />
       <GameStateProvider>
         <GameMatrix />
         <Logger />
         <ResetGame />
       </GameStateProvider>
-    </>
+    </div>
   );
 }
 export default App;
