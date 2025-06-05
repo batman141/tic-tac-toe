@@ -25,35 +25,80 @@ const GameMatrix = () => {
       <table className="gamematrix" border={2} align="center">
         <tbody>
           <tr>
-            <td className={state.colorboard[0]} onClick={() => handleClick(0)}>
+            <td
+              className={`${state.colorboard[0]} ${
+                !state.gameOver && state.board[0] === "" ? "pointer" : ""
+              }`}
+              onClick={() => handleClick(0)}
+            >
               {state.board[0]}
             </td>
-            <td className={state.colorboard[1]} onClick={() => handleClick(1)}>
+            <td
+              className={`${state.colorboard[1]} ${
+                !state.gameOver && state.board[1] === "" ? "pointer" : ""
+              }`}
+              onClick={() => handleClick(1)}
+            >
               {state.board[1]}
             </td>
-            <td className={state.colorboard[2]} onClick={() => handleClick(2)}>
+            <td
+              className={`${state.colorboard[2]} ${
+                !state.gameOver && state.board[2] === "" ? "pointer" : ""
+              }`}
+              onClick={() => handleClick(2)}
+            >
               {state.board[2]}
             </td>
           </tr>
           <tr>
-            <td className={state.colorboard[3]} onClick={() => handleClick(3)}>
+            <td
+              className={`${state.colorboard[3]} ${
+                !state.gameOver && state.board[3] === "" ? "pointer" : ""
+              }`}
+              onClick={() => handleClick(3)}
+            >
               {state.board[3]}
             </td>
-            <td className={state.colorboard[4]} onClick={() => handleClick(4)}>
+            <td
+              className={`${state.colorboard[4]} ${
+                !state.gameOver && state.board[4] === "" ? "pointer" : ""
+              }`}
+              onClick={() => handleClick(4)}
+            >
               {state.board[4]}
             </td>
-            <td className={state.colorboard[5]} onClick={() => handleClick(5)}>
+            <td
+              className={`${state.colorboard[5]} ${
+                !state.gameOver && state.board[5] === "" ? "pointer" : ""
+              }`}
+              onClick={() => handleClick(5)}
+            >
               {state.board[5]}
             </td>
           </tr>
           <tr>
-            <td className={state.colorboard[6]} onClick={() => handleClick(6)}>
+            <td
+              className={`${state.colorboard[6]} ${
+                !state.gameOver && state.board[6] === "" ? "pointer" : ""
+              }`}
+              onClick={() => handleClick(6)}
+            >
               {state.board[6]}
             </td>
-            <td className={state.colorboard[7]} onClick={() => handleClick(7)}>
+            <td
+              className={`${state.colorboard[7]} ${
+                !state.gameOver && state.board[7] === "" ? "pointer" : ""
+              }`}
+              onClick={() => handleClick(7)}
+            >
               {state.board[7]}
             </td>
-            <td className={state.colorboard[8]} onClick={() => handleClick(8)}>
+            <td
+              className={`${state.colorboard[8]} ${
+                !state.gameOver && state.board[8] === "" ? "pointer" : ""
+              }`}
+              onClick={() => handleClick(8)}
+            >
               {state.board[8]}
             </td>
           </tr>

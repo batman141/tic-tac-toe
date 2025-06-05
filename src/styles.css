@@ -77,3 +77,11 @@
   background-color: rgb(198, 14, 14);
   color: rgb(237, 186, 183);
 }
+
+.pointer {
+  cursor: pointer;
+}
+
+.pointer:hover {
+  background-color: rgb(243, 242, 242);
+}
